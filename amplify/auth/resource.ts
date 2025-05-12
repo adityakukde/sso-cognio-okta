@@ -6,8 +6,8 @@ import { defineAuth, secret } from '@aws-amplify/backend';
  */
 export const auth = defineAuth({
   loginWith: {
-    email: true
-/*    externalProviders: {
+    email: true,
+    externalProviders: {
           oidc: [
             {
               name: 'okta2',
@@ -25,6 +25,6 @@ export const auth = defineAuth({
             'http://localhost:8080',
             'https://app.ecs-research.dev/',
           ],
-        },*/
+        },
   },
 });
