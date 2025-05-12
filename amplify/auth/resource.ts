@@ -14,6 +14,7 @@ export const auth = defineAuth({
               clientId: secret('clientId'),
               clientSecret: secret('clientSecret'),
               issuerUrl: 'https://trial-9496111.okta.com/oauth2/default'
+              scopes: ['email','openid']
             },
           ],
           logoutUrls: ['http://localhost:8080/', 'https://app.ecs-research.dev/'],
