@@ -1,4 +1,4 @@
-import { defineAuth, secret } from '@aws-amplify/backend';
+import { defineAuth } from '@aws-amplify/backend';
 
 /**
  * Define and configure your auth resource
@@ -7,19 +7,5 @@ import { defineAuth, secret } from '@aws-amplify/backend';
 export const auth = defineAuth({
   loginWith: {
     email: true,
-    externalProviders: {
-      oidc: [
-        {
-          name: 'okta',
-          clientId: secret('clientId'),
-          clientSecret: secret('clientSecret'),
-          issuerUrl: 'https://trial-9496111.okta.com/oauth2/default',
-        },
-      ],
-      logoutUrls: ['https://app.ecs-research.dev/'],
-      callbackUrls: [
-        'https://app.ecs-research.dev/'
-      ],
-    },
   },
 });
