@@ -23,7 +23,9 @@ function App() {
 
 const handleSignIn = async () => {
   try {
-    await signInWithRedirect({ provider: 'okta2' });
+    await signInWithRedirect({ provider: {
+      custom:'okta2'
+    }});
   } catch (error) {
     console.error('Error during sign-in:', error);
   }
