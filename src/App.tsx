@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useAuthenticator } from '@aws-amplify/ui-react';
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 
@@ -8,6 +9,8 @@ import { signInWithRedirect } from 'aws-amplify/auth'
 
 function App() {
   const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
+
+  const { user } = useAuthenticator();
 
   useEffect(() => {
     client.models.Todo.observeQuery().subscribe({
@@ -34,6 +37,7 @@ const handleSignIn = async () => {
 
   return (
     <main>
+      <h1>{user?.signInDetails?.loginId}'s todos</h1>
       <h1>My todos</h1>
       <button onClick={createTodo}>+ new</button>
       <ul>
