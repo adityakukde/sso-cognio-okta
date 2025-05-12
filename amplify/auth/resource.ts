@@ -13,7 +13,7 @@ export const auth = defineAuth({
               name: 'okta2',
               clientId: secret('clientId'),
               clientSecret: secret('clientSecret'),
-              issuerUrl: 'https://trial-9496111.okta.com/oauth2/default'
+              issuerUrl: 'https://trial-9496111.okta.com/oauth2/default',
               scopes: ['email','openid']
             },
           ],
