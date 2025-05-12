@@ -4,6 +4,8 @@ import { generateClient } from "aws-amplify/data";
 
 const client = generateClient<Schema>();
 
+import { signInWithRedirect } from 'aws-amplify/auth'
+
 function App() {
   const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
 
@@ -16,6 +18,17 @@ function App() {
   function createTodo() {
     client.models.Todo.create({ content: window.prompt("Todo content") });
   }
+
+
+
+const handleSignIn = async () => {
+  try {
+    await signInWithRedirect();
+  } catch (error) {
+    console.error('Error during sign-in:', error);
+  }
+};
+
 
   return (
     <main>
@@ -33,6 +46,9 @@ function App() {
           Review next step of this tutorial.
         </a>
       </div>
+    <button onClick={handleSignIn}>
+      SSO
+    </button>
     </main>
   );
 }

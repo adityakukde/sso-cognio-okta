@@ -5,6 +5,8 @@ import "./index.css";
 import { Amplify } from "aws-amplify";
 import outputs from "../amplify_outputs.json";
 
+
+
 Amplify.configure(outputs);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -12,3 +14,4 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <App />
   </React.StrictMode>
 );
+
