@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 import { signInWithRedirect } from 'aws-amplify/auth';
-import { Hub, Auth } from 'aws-amplify';
-import { Hub } from 'aws-amplify/utils';
 const client = generateClient<Schema>();
 
 
