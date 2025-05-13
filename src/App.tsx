@@ -7,7 +7,6 @@ const client = generateClient<Schema>();
 
 function App() {
   const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
-  const [user, setUser] = useState(null);
 
 
   useEffect(() => {
